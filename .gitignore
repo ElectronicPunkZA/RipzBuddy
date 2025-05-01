@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Compiled binaries
+*.exe
+*.pkg
+*.zip
+*.pyz
+*.toc
+
+# Logs
+*.log
+
+# ChromeDriver and related
+chromedriver.exe
+chromedriver_win32.zip
+chromedriver_win64.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Remove any other large or generated files you don't want in git

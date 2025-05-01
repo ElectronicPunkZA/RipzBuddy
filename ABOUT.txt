@@ -1,0 +1,53 @@
+RipzBuddy NFO Batch Processing Tutorial
+=======================================
+
+Welcome to RipzBuddy! This guide will walk you through batch processing your music collection, including both single-artist and Various Artists (VA) releases, with robust metadata extraction and NFO generation.
+
+Step-by-Step Tutorial
+---------------------
+
+1. **Prepare Your Collection**
+   - Organize your albums into folders. Each folder should contain:
+     - FLAC files (tracks)
+     - A CUE file (optional, for CD rips)
+     - A template or id.tsh file with the Discogs release URL
+
+2. **Launch RipzBuddy**
+   - Open the application by running `python nfo_gui.py` in your project directory.
+
+3. **Start Batch Processing**
+   - Click the 'Batch Process' button.
+   - Select the root folder containing your album subfolders.
+
+4. **What Happens Automatically**
+   - For each album folder:
+     - Discogs metadata is fetched for accurate artist, album, and track info.
+     - FLAC tags are read for per-track artist extraction (for VA releases).
+     - **If all FLAC filenames already contain the artist:** renaming is skipped and you are notified.
+     - The NFO file is generated:
+       - Single-artist: `01. Track Title`
+       - VA: `01. Artist - Track Title`
+     - M3U and SFV files are created.
+     - Album art is extracted if present.
+     - The CUE file is checked for correct PERFORMER tags. If any are missing or mismatched, you will see a warning.
+
+5. **Warnings and Info**
+   - All important info and warnings (e.g., CUE issues, skipped renaming) are shown in the console and log.
+
+6. **Review Results**
+   - Check your album folders for new/updated NFO, M3U, and SFV files.
+   - Review the log for any warnings about CUE files or metadata issues.
+
+How to Obtain Your Discogs Token
+-------------------------------
+1. Go to https://www.discogs.com/settings/developers
+2. Log in with your Discogs account (create one if you don’t have it).
+3. Click "Generate new token" and follow the prompts.
+4. Copy the generated Personal Access Token.
+5. Paste this token into RipzBuddy’s Discogs Token field (top bar) and click Save Token.
+
+About RipzBuddy
+---------------
+RipzBuddy is a batch NFO generator and metadata synchronizer for music collectors. It leverages Discogs and FLAC tags to ensure your releases are accurately documented, with special handling for Various Artists releases and robust error/warning reporting.
+
+For support or feature requests, contact the developer.
